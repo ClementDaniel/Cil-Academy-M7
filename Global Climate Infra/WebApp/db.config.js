@@ -8,7 +8,7 @@ AWS.config.update({
 
 const db = new AWS.DynamoDB.DocumentClient()
 
-const Tablename = 'group3DDBtable'
+const Tablename = 'gcDDBtable'
 
 export {
     db,
