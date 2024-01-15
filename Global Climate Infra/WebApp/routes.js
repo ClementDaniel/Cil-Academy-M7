@@ -3,8 +3,8 @@ import { createOrUpdate, deleteUserById, getUserById, readAllUsers } from './db.
 
 const router = express.Router()
 
-// // READ ALL group3DDBtable
-// router.get('/group3DDBtable', async (req, res) => {
+// // READ ALL gcDDBtable
+// router.get('/gcDDBtable', async (req, res) => {
 //     const { success, data } = await readAllUsers()
 
 //     if (success) {
@@ -14,8 +14,8 @@ const router = express.Router()
 //     }
 //     return res.status(500).json({ success: false, messsage: "Error" })
 // })
-// READ ALL group3dynamodbtable
-router.get('/group3DDBtable', async (req, res) => {
+// READ ALL gcdynamodbtable
+router.get('/gcDDBtable', async (req, res) => {
     try {
         const { success, data } = await readAllUsers()
 
@@ -28,7 +28,7 @@ router.get('/group3DDBtable', async (req, res) => {
         console.log(e)
     }
 })
-// READ ALL group3dynamodbtable
+// READ ALL gcdynamodbtable
 router.get('/history', async (req, res) => {
     try {
         const { success, data } = await readAllUsers()
@@ -43,7 +43,7 @@ router.get('/history', async (req, res) => {
     }
 })
 
-router.get('/group3DDBtable', async (req, res) => {
+router.get('/gcDDBtable', async (req, res) => {
     try {
         const { success, data } = await readAllUsers()
 
@@ -57,8 +57,8 @@ router.get('/group3DDBtable', async (req, res) => {
     }
 })
 
-// // Get group3dynamodbtable by ID
-// router.get('/group3DDBtable/:id', async (req, res) => {
+// // Get gcdynamodbtable by ID
+// router.get('/gcDDBtable/:id', async (req, res) => {
 //     const { id } = req.params
 //     const { success, data } = await getUserById(id)
 //     console.log(data)
@@ -70,8 +70,8 @@ router.get('/group3DDBtable', async (req, res) => {
 // })
 
 
-// Create group3dynamodbtable
-router.post('/group3DDBtable', async (req, res) => {
+// Create gcdynamodbtable
+router.post('/gcDDBtable', async (req, res) => {
     const { success, data } = await createOrUpdate(req.body)
 
     if (success) {
@@ -82,13 +82,13 @@ router.post('/group3DDBtable', async (req, res) => {
 })
 
 
-// Update group3dynamodbtable by ID
-router.put('/group3DDBtable/:id', async (req, res) => {
+// Update gcdynamodbtable by ID
+router.put('/gcDDBtable/:id', async (req, res) => {
     const user = req.body
     const { id } = req.params
     user.id = parseInt(id)
 
-    const { success, data } = await createOrUpdate(group3dynamodbtable)
+    const { success, data } = await createOrUpdate(gcdynamodbtable)
 
     if (success) {
         return res.json({ success, data })
@@ -98,8 +98,8 @@ router.put('/group3DDBtable/:id', async (req, res) => {
 })
 
 
-// // Delete group3dynamodbtable by Id
-// router.delete('/group3DDBtable/:id', async (req, res) => {
+// // Delete gcdynamodbtable by Id
+// router.delete('/gcDDBtable/:id', async (req, res) => {
 //     const { id } = req.params
 //     const { success, data } = await deleteUserById(id)
 //     if (success) {
