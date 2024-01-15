@@ -1,5 +1,5 @@
 [Unit]
-Description=Group3 Node.js Application
+Description=GC Node.js Application
 After=network.target
 
 [Service]
