@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 
-import group3DDBtable from './routes.js';
+import gcDDBtable from './routes.js';
 
 dotenv.config();
 
@@ -19,7 +19,7 @@ app.set('view options', {
 //     res.json({ "Hi": "Hello World" });
 // });
 
-app.get('/api/group3DDBtable', group3DDBtable);
+app.get('/api/gcDDBtable', gcDDBtable);
 
 const PORT = 8000
 const HOST = '0.0.0.0';
