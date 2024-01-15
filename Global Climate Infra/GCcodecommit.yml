@@ -1,12 +1,12 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: Group3-CloudFormation deployment pipelines template
+Description: GC-CloudFormation deployment pipelines template
 
 Resources:
   CodeCommitRepository:
     Type: AWS::CodeCommit::Repository
     Properties:
-      RepositoryName: "Group3-repo"
-      RepositoryDescription: "group3Repository for CFN infrastructure code."
+      RepositoryName: "GC-repo"
+      RepositoryDescription: "gc Repository for CFN infrastructure code."
 
 Outputs:
   Group3CodeCommitRepoARN:
