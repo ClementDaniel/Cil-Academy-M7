@@ -1,9 +1,12 @@
 # Global Climate Change App
 ## What was built
 A comprehensive solution was built to address the Global Climate Change challenge by leveraging the discovery of the rare element "Shalomium" from Asteroid 13123 Tyson. The solution involves setting up an infrastructure to monitor and maintain optimal environmental conditions for Shalomium stored in Vaulticore. The architecture includes two main parts: Part 1 involves ingesting and sampling Aggregator Sensor readings via AWS IoT Core & IoT Analytics, and Part 2 focuses on continuously monitoring the sensor readings and providing human-friendly interpretations on a web application interface.
-## How it was built:
+## How it was built
 The solution was implemented using AWS services, specifically AWS IoT Core, IoT Analytics, Lambda functions, DynamoDB, EC2 instances, Auto Scaling Groups, Elastic Load Balancer (ELB), AWS WAF, Route 53, and ACM. Infrastructure as Code (IaC) tools such as AWS CloudFormation was utilized for setting up and managing the entire solution. The architecture follows specific guidelines and requirements outlined in the document, including data schema, attribute ranges and interpretation, response actions, and overall environmental status protocols.
-## Why it was built:
+## Why it was built
 The purpose of building this solution is to address the challenge posed by Global Climate Change and to secure humanity's future by utilizing the Shalomium element. The solution ensures the careful handling of Shalomium by maintaining optimal environmental conditions in Vaulticore. It incorporates IoT technology for real-time monitoring, interpretation of sensor data, and automated response actions to address deviations from optimal conditions. The web application interface provides a user-friendly way to visualize and understand the environmental status within Vaulticore.
-## What was learned along the way:
+## What was learned along the way
 Through the implementation of this solution, several key learnings were gained.I learned about IoT, data engineering, cloud infrastructure, CI/CD, and Infrastructure as Code (IaC). Gaining hands-on experience with AWS services and best practices in setting up highly available, scalable, and secure solutions. The challenge also encouraged me to think creatively, make design decisions, and address real-world problems using technology. The integration of various components into a cohesive solution reflects the importance of interdisciplinary skills in solving complex challenges. The challenge served as a practical learning opportunity, showcasing the participants' ability to apply theoretical knowledge in a real-world scenario for the benefit of humanity.
+## The Architecture 
+![download](https://github.com/ClementDaniel/Global-Climate-Change/assets/96403532/ba9d0aeb-9725-4657-a3be-c88001e7511e)
+
