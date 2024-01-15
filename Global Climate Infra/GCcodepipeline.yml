@@ -1,17 +1,17 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: Group3-CloudFormation deployment pipelines template
+Description: GC-CloudFormation deployment pipelines template
 
 Resources:
   BuildArtifactBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: group3-buildartifactbucket
+      BucketName: gc-buildartifactbucket
 
   CodeBuildProject:
     Type: AWS::CodeBuild::Project
     Properties:
-      Name: group3-build
-      Description: group3CodeBuild deployment
+      Name: gc-build
+      Description: gcCodeBuild deployment
       ServiceRole: arn:aws:iam::920119599456:role/cil-academy-cicd-codebuild-role
       Artifacts:
         Type: CODEPIPELINE
@@ -35,13 +35,13 @@ Resources:
               commands:
                 - echo Build started on `date` 
                 - aws s3 cp WebApp s3://group3-buildartifactbucket/WebApp  --recursive
-                - aws s3 cp Group3-Part2-Stack.yml s3://group3-buildartifactbucket/Group3-Part2-Stack.yml
+                - aws s3 cp Group3-Part2-Stack.yml s3://gc-buildartifactbucket/Group3-Part2-Stack.yml
       TimeoutInMinutes: 60
 
   CodePipeline:
     Type: AWS::CodePipeline::Pipeline
     Properties:
-      Name: group3-codepipeline
+      Name: gc-codepipeline
       RoleArn: arn:aws:iam::920119599456:role/cil-academy-cicd-codepipeline-role
       ArtifactStore:
         Type: S3
@@ -58,7 +58,7 @@ Resources:
               OutputArtifacts:
                 - Name: !Ref BuildArtifactBucket
               Configuration:
-                RepositoryName: "Group3-repo"
+                RepositoryName: "GC-repo"
                 BranchName: "master"
               RunOrder: 1
 
@@ -71,7 +71,7 @@ Resources:
                 Version: "1"
                 Provider: "CodeBuild"
               InputArtifacts:
-                - Name: "group3-buildartifactbucket"
+                - Name: "gc-buildartifactbucket"
               OutputArtifacts:
                 - Name: "BuildOutput"
               Configuration:
@@ -87,10 +87,10 @@ Resources:
                 Provider: CloudFormation
                 Version: 1
               Configuration:
-                StackName: Group3webappstack
+                StackName: GCwebappstack
                 ActionMode: CREATE_UPDATE
                 RoleArn: arn:aws:iam::920119599456:role/cil-academy-cicd-cloudformation-role
-                TemplatePath: group3-buildartifactbucket::Group3-Part2-Stack.yml
+                TemplatePath: gc-buildartifactbucket::GC-Part2-Stack.yml
               InputArtifacts:
-                - Name: group3-buildartifactbucket
+                - Name: gc-buildartifactbucket
               RunOrder: 3
