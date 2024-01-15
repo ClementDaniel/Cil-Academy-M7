@@ -1,6 +1,6 @@
 import {db, Tablename} from './db.config.js'
 
-// This should create or Update group3-DDBtable
+// This should create or Update gc-DDBtable
 const createOrUpdate = async (data = {}) =>{
     const params = {
         TableName: Tablename,
@@ -15,7 +15,7 @@ const createOrUpdate = async (data = {}) =>{
     }
 }
 
-// Read all group3-DDBtable
+// Read all gc-DDBtable
 const readAllUsers = async()=>{
     const params = {
         TableName: Tablename
@@ -31,7 +31,7 @@ const readAllUsers = async()=>{
 
 }
 
-// Read group3-DDBtable by ID
+// Read gc-DDBtable by ID
 const getUserById = async (value, key = 'id') => {
     const params = {
         TableName: Tablename,
@@ -47,7 +47,7 @@ const getUserById = async (value, key = 'id') => {
     }
 }
 
-// Delete group3-DDBtable by ID
+// Delete gc-DDBtable by ID
 const deleteUserById = async(value, key = 'id' ) => { 
     const params = {
         TableName: Tablename,
